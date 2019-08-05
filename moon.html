@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        the moon
+    </title>
+
+    <style>
+        /* ID Styles */
+        #super-wrapper {
+            float: left;
+            position: absolute;
+            top: 30px;
+            width: 100%;
+        }
+
+        #wrapper {
+            width: 670px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobile formating */
+        @media (max-width: 1200px) {
+
+        }
+        /* Animations */
+        .clouds {
+            opacity: 0.7;
+            width: 100%;
+            height: 362px;
+            position: relative;
+            overflow: hidden;
+            /*
+            margin-top: 70px;
+            margin-bottom: 400px;
+
+            */
+        }
+            .clouds > div {
+                width: 2526px;
+                background: url(images/clouddark.png);
+                height: 100%;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .clouds .mover-1 {
+                animation: moveSlideshow 15s linear infinite;
+            }
+
+        @keyframes moveSlideshow {
+            100% {
+                transform: translateX(-20%);
+            }
+        }
+        /* My stuff*/
+        body {
+            background-color: #313131;
+            background-image: url("images/stars.png");
+            font-family: Arial;
+            text-align: center;
+            color: white;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .mainbox {
+            /*
+            width: 100px;
+            height: 100px;
+            background-color: #121111;
+            background-color:#313131;
+            */
+            background-color:#1d1d1d;
+            opacity:0.9;
+            border-radius: 25px;
+        }
+        .noclouds {
+            width: 100%;
+            height: 190px;
+            position: relative;
+            overflow: hidden;
+        }
+            .noclouds > div {
+                width: 2526px;
+                height: 100%;
+            }
+        .moonhr {
+            border-color:white;
+            background-color:white;
+            color:white;
+
+        }
+        .creditslist{
+            font: 16px Consolas;
+        }
+            .creditslist a {
+                color:white;
+            }
+            .creditslist li{
+                list-style-type: square;
+                text-align:left;
+                margin:3px;
+            }
+        .songselect {
+            font-family:Consolas;
+        }
+        #detailmoon {
+            max-width:90%;
+            max-height:90%; 
+            -webkit-transition: -webkit-transform .8s ease-in-out;
+            transition: transform 5s ease-in-out;
+        }
+        /*
+        #detailmoon:hover {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        */
+        #phonograph {
+            max-width:75%;
+            max-height:75%; 
+        }
+        #yeahbaby {
+            padding: 10px;
+            background-color: #bababa;
+            margin: 5px;
+            font: italic bold 20px Consolas;
+        }
+        #songlist{
+            max-width:50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="noclouds"></div>
+    <div class="clouds">
+        <div class="mover-1"></div>
+    </div>
+    <div class="clouds">
+        <div class="mover-1"></div>
+    </div>
+    <div class="clouds">
+        <div class="mover-1"></div>
+    </div>
+    <div class="clouds">
+        <div class="mover-1"></div>
+    </div>
+    <div class="clouds">
+        <div class="mover-1"></div>
+    </div>
+    <div id="super-wrapper">
+        <div id="wrapper">
+            <header>
+                <h1 style="font-family:Consolas">welcome to</h1>
+                <h1 style="font-family:Consolas">ｔｈｅ ｍｏｏｎ ｐａｇｅ</h1>
+            </header>
+            <div class="mainbox">
+                <br />
+                <img src="images/detailmoon.png" alt="a detailed photograph of the moon" id="detailmoon"/>
+                <p style="font-family:Consolas;font-size:14px;">(sound warning)</p>
+                <button id="yeahbaby" onclick="YeahBaby()"><b><i>YEAH BABY</i></b></button>
+                <br />
+
+                <hr style="color:white; max-width:90%"/>
+
+                <h2 style="font-family:Consolas">Could I interest you in some</h2>
+                <h2 style="font-family:Consolas">ｍｏｏｎ ｔｕｎｅｓ？</h2>
+                <img src="images/phonograph.png" alt="an illustration of a phonograph" id="phonograph"/>
+                <div> <select class="songselect" id="songlist" onchange="SelectAndPlayTune()" >
+                      <option disabled selected value=""> -- select an option -- </option>
+                      <option class="songselect" value="ducktales_nes_moon_theme.mp3">Ducktales NES - Moon Theme</option>
+                      <option class="songselect" value="king_harvest_dancing_in_the_moonlight.mp3">King Harvest - Dancing in the moonlight</option>
+                      <option class="songselect" value="sailor_moon_moonlight_densetsu.mp3">Sailor Moon - Moonlight Densetsu</option>
+                      <option class="songselect" value="beethoven_moonlight_sonata.mp3">Beethoven - Moonlight Sonata</option>
+                </select> 
+                </div>
+                <div>
+                    <audio id="audiocontrols" controls="controls" style="margin:20px">
+                        <source id="audiosource" src=""/>
+                    </audio>
+                </div>
+            </div>
+        <footer style="display:table">
+            <p class="creditslist">image/audio/misc credits:</p>
+            <ul class="creditslist">
+                <li><a href="https://www.stickpng.com/img/nature/moon/very-detailed-moon">stickpng.com - detailed moon image</a></li>
+                <li><a href="https://mike42.me/blog/2018-01-howo-to-generate-star-fields">mike42.me - star field background</a></li>
+                <li><a href="http://retrovectors.com/victorian/gramophone/">retrovectors.com - gramophone image</a></li>
+                <li><a href="https://bitmidi.com">bitmidi.com - beethoven moonlight sonata.midi, king harvest dancing in the moonlight.midi, sailor moon moonlight densetsu.midi</a></li>
+                <li><a href="https://gifypet.neocities.org/">gifypet.neocities.org - styles, cloud background, more than i'd like to admit</a></li>
+            </ul>
+        </footer>
+
+        </div>
+    </div>
+    <script>
+        function YeahBaby() {
+            var yeahbaby = new Audio("audio/yeahbaby_75%_fadein.mp3");
+            yeahbaby.play();
+        }
+        function SelectAndPlayTune() {
+            var song = document.getElementById("songlist").options[songlist.selectedIndex].value;
+            var source = document.getElementById('audiosource');
+            source.src = "audio/" + song;
+            var audiocontrols = document.getElementById('audiocontrols');
+            audiocontrols.load();
+            audiocontrols.play();
+        }
+    </script>
+</body>
+</html>
